@@ -66,11 +66,11 @@ export async function display() {
     earthMesh.rotation.x -= 0.15;
     cloudMesh.rotation.x -= 0.15;
 
-    for (let i = 0; i < locations.length; i++) {
-        const markerMesh = mesh.createMarkerMesh(locations[i].longitude, locations[i].latitude, locations[i].uuid);
+    Object.entries(locations).forEach(entry => {
+        const markerMesh = mesh.createMarkerMesh(entry[1].longitude, entry[1].latitude, entry[0]);
         markerMeshes.push(markerMesh);
         earthMesh.add(markerMesh);
-    }
+    });
 
     orbitControls = new OrbitControls(camera, renderer.domElement);
     orbitControls.enableDamping = true;

@@ -7,15 +7,27 @@
 
     import * as render from './animation/render';
 
-    let rendered = false;
     onMount(async () => {
         await render.loadTextures();
         await render.initialize();
-        rendered = await render.display();
+        await render.display();
         document.getElementById('webgl-container').style = 'opacity: 1';
         render.animate();
     });
 </script>
+
+<section id='webgl-container'></section>
+
+<div class='wrapper'>
+    <div class='content'>
+        <Banner></Banner>
+        <Navigation></Navigation>
+        <Header></Header>
+    </div>
+    <div class='card-position'>
+        <Card></Card>
+    </div>
+</div>
 
 <style>
     #webgl-container {
@@ -31,7 +43,6 @@
         width: 100%;
         pointer-events: none;
         color: var(--white);
-        
     }
     .content {
         position: relative;
@@ -43,16 +54,9 @@
         margin: auto;
         z-index: 2;
     }
+    .card-position {
+        position: fixed;
+        width: 100%;
+        bottom: 40px;
+    }
 </style>
-
-<section id='webgl-container'></section>
-
-<div class='wrapper'>
-    <div class='content'>
-        <Banner></Banner>
-        <Navigation></Navigation>
-        <Header></Header>
-    </div>
-</div>
-
-<Card></Card>

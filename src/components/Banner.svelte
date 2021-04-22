@@ -1,6 +1,11 @@
-<div class='c-banner'>
-    🚀 Incoming Software Engineer Intern at xxxxxxxxxx. Currently Seeking Fall 2021 Internships.
-</div>
+<script>
+    let mobile = window.innerWidth < 1200;
+    window.addEventListener('resize', () => mobile = window.innerWidth < 1200);
+</script>
+
+{#if !mobile}
+    <div class='c-banner'>🚀 Incoming Software Engineer Intern at Nokia. Currently Seeking Fall 2021 Internships.</div>
+{/if}
 
 <style>
     .c-banner {
