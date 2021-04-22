@@ -24,7 +24,7 @@ jobs:
         uses: pulumi/action-install-pulumi-cli@v1.0.1
       - run: npm install
       - run: npm run build
-      - uses: pulumi/actions@v2
+      - uses: pulumi/actions@v3
         with:
           command: up
           stack-name: dev
