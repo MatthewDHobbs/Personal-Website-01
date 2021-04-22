@@ -25,7 +25,7 @@
     },
     "dependencies": {
         "@pulumi/aws": "^3.32.0",
-        "@pulumi/pulumi": "^2.22.0",
+        "@pulumi/pulumi": "^3.0.0",
         "@types/node": "^14.14.33",
         "sirv-cli": "^1.0.0",
         "three": "^0.126.1"
