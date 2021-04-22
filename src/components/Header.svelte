@@ -1,13 +1,20 @@
+<script>
+    let mobile = window.innerWidth < 1200;
+    window.addEventListener('resize', () => mobile = window.innerWidth < 1200);
+</script>
+
 <div class='c-header'>
     <div class='c-header-title'>Hello, I'm Matthew.</div>
     <div class='c-header-subtitle'>I'm currently studying computer science at Carleton University.</div>
     <div class='c-header-annotation'>* Click on a marker for more information</div>
-    <div class='c-header-button'>
-        <a href='/assets/MatthewHobbs.pdf' download='MatthewHobbs.pdf'>
-            Resume
-            <img class='c-header-button-icon' src='/assets/icons/download.svg' alt='Download'>
-        </a>  
-    </div>
+    {#if !mobile}
+        <div class='c-header-button'>
+            <a href='/assets/MatthewHobbs.pdf' download='MatthewHobbs.pdf'>
+                Resume
+                <img class='c-header-button-icon' src='/assets/icons/download.svg' alt='Download'>
+            </a>  
+        </div>
+    {/if}
 </div>
 
 <style>
